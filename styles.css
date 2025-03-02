@@ -1,0 +1,89 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Background Styles with Animation */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #001f3d; /* Default background color */
+    animation: moveBackground 15s infinite alternate;
+}
+
+/* Styling for the Moon */
+.moon {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 150px;
+    height: 150px;
+    background-image: url('moon.png'); /* Make sure moon.png exists */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moonMove 15s infinite ease-in-out;
+}
+
+/* Stars in Background */
+.stars {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('stars.png'); /* Make sure stars.png exists */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    animation: starsTwinkle 5s infinite alternate;
+}
+
+/* Ramadan Kareem Greeting */
+.greeting {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    animation: glowText 3s infinite alternate;
+}
+
+/* Animations */
+@keyframes moonMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(30%); }
+}
+
+@keyframes starsTwinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes glowText {
+    0% { text-shadow: 0 0 10px #ffb3b3; }
+    100% { text-shadow: 0 0 30px #ffb3b3, 0 0 60px #ff6666; }
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
